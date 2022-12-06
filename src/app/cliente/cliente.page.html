@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="mycolor">
+    <ion-title>Hola {{nombreUsuario}}!</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+  <ion-searchbar [formControl]="searchControl" placeholder="Buscar por nombre"></ion-searchbar>
+
+  <ion-button (click)="nuevoCliente()">Nuevo cliente</ion-button>
+
+  <ion-list>
+  <ion-list-header>
+    <ion-label>Clientes</ion-label>
+  </ion-list-header>
+    <ion-item *ngFor="let cliente of cliente">
+      <ion-label>{{cliente.nomcli}} {{cliente.apecli}}</ion-label>
+    </ion-item>
+
+  </ion-list>
+
+  <ion-button color="danger" (click)="logout()">Cerrar sesión</ion-button>
+</ion-content>
